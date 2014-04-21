@@ -21,15 +21,14 @@ public class OEGame
 			RandNumberObject.randNum = r.nextInt(10);  //create a random number
 			System.out.println("Try and guess if the number is odd or even.");
 			UserInput = S.nextInt();
-			 if(UserInput == RandNumberObject.randNum)
+			 if(UserInput == RandNumberObject.randNumMod)
 	         {
 	         	win = true;
 	         }
-	        
-	         
-			 if(win)
+	         if(win)
 			 {
 				 System.out.println("You Win!");
+				 System.out.println();
 				 CountWin++;
 			 }
 			 else 
@@ -49,20 +48,22 @@ public class OEGame
 }
 
 
-//the other class
 
 import java.util.Random;
 
 public class RandNumber 
 {
 	int randNum = 0;
+	int randNumMod;
 	
 	public int ARandMethod()
 	{
 		Random r = new Random();                                        
 		randNum = 0 + (int)(Math.random()*100);
-		return randNum%2;
+		randNumMod= randNum%2;
+		return randNumMod;
 	}
 	
 }
 
+	
